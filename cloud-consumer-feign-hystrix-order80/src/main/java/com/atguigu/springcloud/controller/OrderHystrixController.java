@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 
 @RestController
 @Slf4j
-@DefaultProperties(defaultFallback = "payment_Global_FallbackMethod") //设置全局的默认返回值方法
+//@DefaultProperties(defaultFallback = "payment_Global_FallbackMethod") //设置全局的默认返回值方法
 public class OrderHystrixController {
     @Autowired
     private PaymentHystrixService paymentHystrixService;
@@ -28,7 +28,7 @@ public class OrderHystrixController {
 /*    @HystrixCommand(fallbackMethod = "payment_TimeoutHandler",commandProperties = {
             @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="1500")
     })*/
-    @HystrixCommand     //出错时，使用默认的错误处理方法
+    //@HystrixCommand     //出错时，使用默认的错误处理方法
     @GetMapping("/consumer/payment/hystrix/timeout/{id}")
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id){
         String result = paymentHystrixService.paymentInfo_TimeOut(id);

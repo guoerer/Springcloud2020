@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 
 public interface PaymentService {
     public String paymentInfo_OK(Integer id);
+    //测试服务降级
     public String paymentInfo_TimeOut(Integer id);
 
+    //测试服务熔断
+    public String paymentCircuitBreaker(Integer id);
 }
