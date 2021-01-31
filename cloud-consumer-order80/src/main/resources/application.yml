@@ -1,0 +1,11 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-order80    #eurka 注册中心不能使用_下划线，对下划线支持有问题
+eureka:
+  client:
+    register-with-eureka: true  #将自己作为客户端注册到eureka 上
+    fetchRegistry: true  #获取eureka上服务列表
+    service-url:
+      defaultZone: http://localhost:7001/eureka

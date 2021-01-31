@@ -1,0 +1,18 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-feign-order80
+eureka:   #注册到注册中心是哪个的相关配置
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#设置Feign客户端超时时间（openfeign默认支持ribbon）
+ribbon:
+  ReadTimeout:  5000
+  ConnectTimeout: 5000
+logging:    #openFeign的日志级别是debug级别。
+  level:
+    com.atguigu.springcloud.service.PaymentFeignService: debug
