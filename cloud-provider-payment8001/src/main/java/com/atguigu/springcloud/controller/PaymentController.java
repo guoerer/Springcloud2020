@@ -59,6 +59,15 @@ public class PaymentController {
             e.printStackTrace();
         }
         return port;
-
     }
+
+    /**
+     * 测试服务链路调用过程的监控组件===sleuth+zipkin
+     * @return
+     */
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin(){
+        return "hi ,i'am paymentzipkin server，welcome to atguigu，O(∩_∩)O哈哈~";
+    }
+
 }
