@@ -1,0 +1,14 @@
+server:
+  port: 9001 #本服务运行的端口号
+spring:
+  application:
+    name: nacos-payment-provider   #注册本服务的名称（不能使用_对_支持有问题）
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848     #配置nacos的地址
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'    #默认只公开了/health和/info 端点，想要暴露所有端点只需设置成*
